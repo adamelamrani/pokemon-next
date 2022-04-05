@@ -29,6 +29,22 @@ const PokeNavBar = styled.nav`
     li {
       display: flex;
       align-items: center;
+
+      a {
+        text-decoration: none;
+        transition: all ease-in-out 0.3s;
+      }
+
+      a:hover {
+        font-weight: bolder;
+        color: red;
+      }
+      a:active,
+      a:focus {
+        color: red;
+        font-weight: bolder;
+        text-decoration: underline;
+      }
     }
   }
 `;
