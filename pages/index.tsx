@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
+import HomeStyle from "./HomeStyle";
 
 const Home: NextPage = () => {
   return (
     <>
-      <h1>Pokemon with Next.js</h1>
+      <HomeStyle>Pokemon with Next.js</HomeStyle>
     </>
   );
 };
