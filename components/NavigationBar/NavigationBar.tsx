@@ -1,22 +1,29 @@
 import Image from "next/image";
+import Link from "next/link";
 import PokeNavBar from "./PokeNavBar";
 
 const NavigationBar: React.FunctionComponent = (): JSX.Element => {
   return (
     <>
       <PokeNavBar>
+        <div>
+          <Image
+            src={"/pokemon-logo.svg"}
+            alt="Pokemon Logo"
+            width={140}
+            height={50}
+          />
+        </div>
         <ul>
           <li>
-            <Image
-              src={"/pokemon-logo.svg"}
-              alt="Pokemon Logo"
-              width={140}
-              height={50}
-            />
+            <Link href={"/"}>Future</Link>
           </li>
-          <li>Future</li>
-          <li>Future</li>
-          <li>Future</li>
+          <li>
+            <Link href={"/"}>Future</Link>
+          </li>
+          <li>
+            <Link href={"/"}>Future</Link>
+          </li>
         </ul>
       </PokeNavBar>
     </>

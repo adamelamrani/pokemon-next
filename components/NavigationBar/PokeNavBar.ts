@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const PokeNavBar = styled.nav`
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -11,6 +12,12 @@ const PokeNavBar = styled.nav`
   position: relative;
   top: 0;
 
+  div {
+    display: flex;
+    align-items: center;
+    width: 140px;
+  }
+
   ul {
     width: 100%;
     padding: 0;
@@ -19,13 +26,25 @@ const PokeNavBar = styled.nav`
     flex-direction: row;
     justify-content: space-evenly;
 
-    li:first-child {
-      width: 140px;
-    }
-
     li {
       display: flex;
       align-items: center;
+
+      a {
+        text-decoration: none;
+        transition: all ease-in-out 0.3s;
+      }
+
+      a:hover {
+        font-weight: bolder;
+        color: red;
+      }
+      a:active,
+      a:focus {
+        color: red;
+        font-weight: bolder;
+        text-decoration: underline;
+      }
     }
   }
 `;

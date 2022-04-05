@@ -1,0 +1,43 @@
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ServerStyleSheet } from "styled-components";
+
+export default function MyDocument(props: any) {
+  return (
+    <Html>
+      <Head>
+        <title>Pokémon App in Next.js</title>
+        <link href="favicon.ico" rel="icon" type="image/x-icon" />
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+
+MyDocument.getInitialProps = async (ctx: any) => {
+  const sheet = new ServerStyleSheet();
+  const originalRenderPage = ctx.renderPage;
+
+  try {
+    ctx.renderPage = () =>
+      originalRenderPage({
+        enhanceApp: (App: any) => (props: any) =>
+          sheet.collectStyles(<App {...props} />),
+      });
+
+    const initialProps = await Document.getInitialProps(ctx);
+    return {
+      ...initialProps,
+      styles: (
+        <>
+          {initialProps.styles}
+          {sheet.getStyleElement()}
+        </>
+      ),
+    };
+  } finally {
+    sheet.seal();
+  }
+};
