@@ -5,7 +5,6 @@ export default function MyDocument(props: any) {
   return (
     <Html>
       <Head>
-        <title>Pokémon App in Next.js</title>
         <link href="favicon.ico" rel="icon" type="image/x-icon" />
       </Head>
       <body>
