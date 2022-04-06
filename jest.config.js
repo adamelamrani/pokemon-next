@@ -11,15 +11,15 @@ const customJestConfig = {
     "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
   },
   collectCoverageFrom: [
-    "*/*.tsx",
-    "*/*.ts",
+    "./**/*.tsx",
+    "./**/*.ts",
+    "!**/_document.tsx",
     "!.next/**/*",
     "!coverage/**/*",
+    "!tsconfig.json",
     "!jest.config.js",
     "!next.config.js",
     "!**/_app.tsx",
-    "!src/mocks/*",
-    "!src/interfaces/*",
   ],
 };
 module.exports = createJestConfig(customJestConfig);
